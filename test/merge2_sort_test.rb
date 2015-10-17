@@ -8,6 +8,7 @@ class TestMergeSort < Minitest::Test
   end
 
   def test_do_I_understand_recursion_with_addition
+
     def add(i,j)
       if j == 0
         i
@@ -15,30 +16,38 @@ class TestMergeSort < Minitest::Test
         add(i.succ,j.pred)
       end
     end
+
     assert_equal 15+74 , add(15,74)
+
   end
 
-  def test_base_case
+  def test_its_base_case_works
     sortable = SortingSuite::Merge2Sort.new
-    assert_equal %w{alpha} , sortable.sort(%w{alpha})
+    assert_equal %w{ alpha } , sortable.sort( %w{ alpha } )
   end
 
-  def test_with_single_merge
+  def test_it_sorts_empty
     sortable = SortingSuite::Merge2Sort.new
-    assert_equal [1,2] ,sortable.sort([2,1])
+    assert_equal [] , sortable.sort([])
   end
 
-  def test_sort_with_lots_of_integers
+  def test_it_sorts_with_single_merge
+    sortable = SortingSuite::Merge2Sort.new
+    assert_equal [1,2] , sortable.sort([1,2])
+  end
+
+  def test_it_sorts_with_lots_of_integers_in_reverse
     sortable = SortingSuite::Merge2Sort.new
     assert_equal (0..100).to_a + [100], sortable.sort((0..100).to_a.reverse + [100])
   end
 
-  def test_sort_with_lots_of_random_integers
+  def test_it_sorts_with_lots_of_random_integers
     random_list = []
+
     10.times do
       random_list.push(rand(0..100))
     end
+
     assert_equal random_list.sort , SortingSuite::Merge2Sort.new.sort(random_list)
   end
-
 end

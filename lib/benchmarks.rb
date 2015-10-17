@@ -2,6 +2,7 @@ require_relative 'bubble_sort'
 require_relative 'insertion_sort'
 require_relative 'merge_sort'
 require_relative 'merge2_sort'
+require_relative 'selection_sort'
 require 'pry'
 
 # benchmark = SortingSuite::Benchmark.new
@@ -39,6 +40,11 @@ module SortingSuite
 
       end
 
+      if name_of_sort_algorithm == SortingSuite::SelectionSort
+
+        SortingSuite::SelectionSort.new.sort(array)
+
+      end
       final = Time.new
 
       return final - initial
@@ -55,18 +61,19 @@ module SortingSuite
       times["InsertionSort"] = timer(SortingSuite::InsertionSort, array)
       times["MergeSort"] = timer(SortingSuite::MergeSort, array)
       times["Merge2Sort"] = timer(SortingSuite::Merge2Sort, array)
-      binding.pry
+      times["SelectionSort"] = timer(SortingSuite::SelectionSort,array)
+
       times = times.sort {|a,b| a[0] <=> b[0]}
-      binding.pry
+
       times
     end
 
     def fastest(array)
-      puts "#{compare(array)[0][0]} is the fastest"
+      puts "#{compare(array)[-1][0]} is the fastest"
     end
 
     def slowest(array)
-      puts "#{compare(array)[-1][0]} is the slowest"
+      puts "#{compare(array)[0][0]} is the slowest"
     end
 
   end
@@ -83,6 +90,8 @@ benchmark.time(SortingSuite::BubbleSort,random_list)
 benchmark.time(SortingSuite::InsertionSort,random_list)
 benchmark.time(SortingSuite::MergeSort,random_list)
 benchmark.time(SortingSuite::Merge2Sort,random_list)
+benchmark.time(SortingSuite::SelectionSort,random_list)
+
 benchmark.fastest(random_list)
 benchmark.slowest(random_list)
 

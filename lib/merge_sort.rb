@@ -22,9 +22,19 @@ module SortingSuite
       sorted_array
     end
 
+    def smallest_power_of_2 (num)
+      k = 0
+      while 2**k < num do
+        k+=1
+      end
+      k
+    end
+
+
+
     def sort(array)
       k = 0
-      until sorted?(array) do
+      until k == smallest_power_of_2(array.length) do
         array = sort_pass(array, 2**k)
         k +=1
       end

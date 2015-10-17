@@ -17,4 +17,4 @@ module SortingSuite
   end
 end
 sorter = SortingSuite::Merge2Sort.new
-sorter.sort(%w{d b a c})
+sorter.sort(%w{ d b a c })
