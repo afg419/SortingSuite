@@ -1,0 +1,15 @@
+
+SortingSuite -- First Project for the Turing School
+
+lib:
+  bubble_sort: Implements bubble sort algorithm
+  insertion_sort: Implements insertion sort algorithm
+  merge_sort: Implements merge sort algorithm
+  selection_sort: Implements selection sort algorithm
+  merge2_sort: Implements merge sort, but without the use of recursion
+  matrix_sort: Uses merge sort an array of arrays
+  benchmarks: Provides methods for timing the algorithms
+  swap_methods: Provides methods required by multiple sort algorithms
+
+test:
+  Tests for each sort algorithm including for randomly created arrays.
