@@ -14,7 +14,7 @@ class TestBubbleSort < Minitest::Test
 
   def test_it_does_single_sort_pass_with_string_array
     sortable = SortingSuite::BubbleSort.new
-    assert_equal %w{alpha beta delta epsilon gamma} , sortable.sort_pass(["delta","alpha","beta","gamma","epsilon"])
+    assert_equal %w{ alpha beta delta epsilon gamma } , sortable.sort_pass(["delta","alpha","beta","gamma","epsilon"])
   end
 
   def test_it_sorts_empty

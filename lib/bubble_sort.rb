@@ -23,6 +23,10 @@ module SortingSuite
 
   end
 end
+
+
+sorter = SortingSuite::BubbleSort.new
+sorter.sort(["d", "b", "a", "c"])
 # >> 2
 # >> 1
 # >>

@@ -28,3 +28,5 @@ end
 # >> 1
 # >>
 # >> true
+sorter = SortingSuite::InsertionSort.new
+sorter.sort(["d", "b", "a", "c"])

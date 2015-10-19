@@ -45,6 +45,5 @@ module SortingSuite
 end
 
 
-
 sorter = SortingSuite::MergeSort.new
 sorter.sort(%w{d b a c})
